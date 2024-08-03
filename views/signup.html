@@ -1,175 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up</title>
-    <link rel="icon" href="./home_11971433.png" type="image/x-icon" id="tlogo">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lobster&family=Nova+Mono&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rufina:wght@400;700&display=swap"
-        rel="stylesheet">
-        <script src="https://kit.fontawesome.com/22c25cedf2.js" crossorigin="anonymous"></script>
+      rel="icon"
+      href="/public/images/home_11971433.png"
+      type="image/x-icon"
+      id="tlogo"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lobster&family=Nova+Mono&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rufina:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/22c25cedf2.js"></script>
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
+      .container {
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(to right, #eff0cc, #f2e939a4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .btn {
+        padding: 7px 40px;
+        background: linear-gradient(#b0effc, #02027f);
+        border: 4px outset #522258;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: 300;
+        border-radius: 20px;
+        font-family: monospace;
+        color: antiquewhite;
+        transition: transform 0.2s;
+        text-size-adjust: 100%;
+      }
+
+      .btn:active {
+        transform: scale(0.95);
+      }
+
+      .logo img {
+        width: 220px;
+        padding: 10px;
+      }
+
+      .popup {
+        background-color: #fff;
+        padding: 20px;
+        width: 50%;
+        display: flex;
+        border-radius: 10px;
+        box-shadow: 5px 10px 18px #6c6b6b;
+      }
+
+      .lo {
+        margin: auto;
+        padding: 10px 20px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .name {
+        font-size: 40px;
+        font-family: "Lobster", sans-serif;
+        font-weight: 200;
+        font-style: normal;
+        margin-bottom: 10px;
+        color: rgba(0, 0, 0, 0.743);
+        text-size-adjust: 100%;
+      }
+
+      .slogan {
+        font-size: 16px;
+        color: #666;
+        padding: 20px 0px;
+        font-family: "Rufina", serif;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 25px;
+        text-size-adjust: 100%;
+      }
+
+      .details {
+        text-align: center;
+        align-items: center;
+        width: 90%;
+      }
+
+      .details form {
+        align-content: center;
+        margin-top: 20px;
+        align-items: center;
+        margin-right: 20px;
+        padding: 20px 0px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+        position: relative;
+        text-size-adjust: 100%;
+      }
+
+      .form-group .icon {
+        position: absolute;
+        left: 10px;
+        font-size: 20px;
+        color: #333;
+        text-size-adjust: 100%;
+      }
+
+      .form-group label {
+        display: flex;
+        align-items: center;
+      }
+      .form-group input {
+        width: 100%;
+        padding: 10px 10px 10px 40px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+        outline: none;
+      }
+
+      .form-group input:focus {
+        border-color: #a1a1a1;
+      }
+
+      .sign p {
+        font-size: 16px;
+        color: #666;
+        padding: 20px 0px;
+        font-family: "Rufina", serif;
+        font-weight: 400;
+        font-style: normal;
+        text-size-adjust: 100%;
+      }
+
+      .details h1 {
+        font-size: 25px;
+        color: #333;
+        font-family: "Lobster", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        padding-bottom: 20px;
+        text-size-adjust: 100%;
+      }
+
+      @media only screen and (max-width: 768px) {
         .container {
-            width: 100%;
-            height: 100vh;
-            background: linear-gradient(to right, #eff0cc, #f2e939a4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .btn {
-            padding: 7px 40px;
-            background: linear-gradient(#b0effc, #02027f);
-            border: 4px outset #522258;
-            cursor: pointer;
-            font-size: 18px;
-            font-weight: 300;
-            border-radius: 20px;
-            font-family: monospace;
-            color: antiquewhite;
-            transition: transform 0.2s;
-            text-size-adjust: 100%;
-        }
-
-        .btn:active {
-            transform: scale(0.95);
+          margin: 20px auto;
         }
 
         .logo img {
-            width: 220px;
-            padding: 10px;
+          width: 70px;
+          height: 70px;
         }
+      }
 
-        .popup {
-            background-color: #fff;
-            padding: 20px;
-            width: 50%;
-            display: flex;
-            border-radius: 10px;
-            box-shadow: 5px 10px 18px #6c6b6b;
+      @media only screen and (max-width: 480px) {
+        .container {
+          margin: 10px auto;
         }
-
-        .lo {
-            margin: auto;
-            padding: 10px 20px;
-            width: 100%;
-            text-align: center;
-        }
-
-        .name {
-            font-size: 40px;
-            font-family: "Lobster", sans-serif;
-            font-weight: 200;
-            font-style: normal;
-            margin-bottom: 10px;
-            color: rgba(0, 0, 0, 0.743);
-            text-size-adjust: 100%;
-        }
-
-        .slogan {
-            font-size: 16px;
-            color: #666;
-            padding: 20px 0px;
-            font-family: "Rufina", serif;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 25px;
-  text-size-adjust: 100%;
-        }
-
-.details{
-    text-align: center;
-    align-items: center;
-    width: 90%;
-}
-
-.details form{
-    align-content: center;
-    margin-top: 20px;
-    align-items: center;
-    margin-right: 20px;
-    padding: 20px 0px;
-}
-
-        .form-group{
-            margin-bottom: 20px;
-            position: relative;
-            text-size-adjust: 100%;
-        }
-
-.form-group .icon{
-    position: absolute;
-    left: 10px;
-    font-size: 20px;
-    color: #333;
-    text-size-adjust: 100%;
-}
-
-        .form-group label {
-    display: flex;
-    align-items: center;
-}
-        .form-group input {
-    width: 100%;
-    padding: 10px 10px 10px 40px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-    outline: none;
-}
-
-.form-group input:focus {
-    border-color: #a1a1a1;
-}
-        
-.sign p{
-    font-size: 16px;
-            color: #666;
-            padding: 20px 0px;
-            font-family: "Rufina", serif;
-  font-weight: 400;
-  font-style: normal;
-  text-size-adjust: 100%;
-}
-
-.details h1{
-font-size: 25px;
-color: #333;
-font-family: "Lobster", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  padding-bottom: 20px;
-  text-size-adjust: 100%;
-}
-
-@media only screen and (max-width: 768px) {
-            .container {
-                margin: 20px auto;
-            }
-
-            .logo img {
-                width: 70px;
-                height: 70px;
-            }
-        }
-
-        @media only screen and (max-width: 480px) {
-            .container {
-                margin: 10px auto;
-            }
-            /* .logo img {
+        /* .logo img {
                 display: none;
             }
             .name{
@@ -178,73 +183,86 @@ font-family: "Lobster", sans-serif;
             .slogan{
             font-size: 10px;
             } */
-            .popup{
-                padding: 10px;
-                width: 100%;
-            }
-        
+        .popup {
+          padding: 10px;
+          width: 100%;
         }
-
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <div class="popup" id="popup">
-            <div class="lo">
-                <div class="name">
-                    <span>House Hunting</span>
-                </div>
-                <div class="logo">
-                    <img src="./home_11971433.png" alt="logo">
-                </div>
-                <div class="slogan">
-                    <p>Find Your Perfect Home, Effortlessly!</p>
-                    <p> OR </p>
-                    <p>Unlock the Value of Your Home</p>
-                </div>
-            </div>
-            <div class="details">
-                
-                <form>
-                    <h1>Sign Up...</h1>
-                    <div class="form-group">
-                        <label for="email">
-                            <i class="fa-regular fa-user icon"></i>
-                            <input type="name" id="name" name="name" placeholder="Your name" required>
-                        </label>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">
-                            <i class="fa-solid fa-envelope icon"></i>
-                            <input type="email" id="email" name="email" placeholder="Email" required>
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">
-                            <i class="fa-solid fa-lock icon"></i>
-                            <input type="password" id="password" name="password" placeholder="Password" required>
-                        </label>
-                    </div>
-                    <button class="btn">Sign Up!</button>
-                </form>
-                <div class="sign">
-                    <p>Already have an account? <a href="./login.html">Login</a></p>
-                    
-                </div>
-            </div>
-            
+      <div class="popup" id="popup">
+        <div class="lo">
+          <div class="name">
+            <span>House Hunting</span>
+          </div>
+          <div class="logo">
+            <img src="/public/images/home_11971433.png" alt="logo" />
+          </div>
+          <div class="slogan">
+            <p>Find Your Perfect Home, Effortlessly!</p>
+            <p>OR</p>
+            <p>Unlock the Value of Your Home</p>
+          </div>
         </div>
-        
+        <div class="details">
+          <form>
+            <h1>Sign Up...</h1>
+            <div class="form-group">
+              <label for="email">
+                <i class="fa-regular fa-user icon"></i>
+                <input
+                  type="name"
+                  id="name"
+                  name="name"
+                  placeholder="Your name"
+                  required
+                />
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label for="email">
+                <i class="fa-solid fa-envelope icon"></i>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email"
+                  required
+                />
+              </label>
+            </div>
+            <div class="form-group">
+              <label for="password">
+                <i class="fa-solid fa-lock icon"></i>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Password"
+                  required
+                />
+              </label>
+            </div>
+            <button class="btn">Sign Up!</button>
+          </form>
+          <div class="sign">
+            <p>Already have an account? <a href="./login.html">Login</a></p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script>
-document.querySelector('.login-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert('Login Successful');
-});
+      document
+        .querySelector(".login-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert("Login Successful");
+        });
     </script>
-</body>
-
+  </body>
 </html>
