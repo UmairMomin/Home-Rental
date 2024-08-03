@@ -1,0 +1,176 @@
+:root {
+    --primary-color: #FD632F;
+    --secondary-color: #FF8B66;
+    --text-color: #333333;
+    --background-color: #f5f5f7;
+}
+
+
+
+.cont {
+    max-width: 1000px;
+    margin: 2rem auto;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.cont:hover {
+    box-shadow: 0 10px 20px rgba(253, 99, 47, 0.1);
+}
+
+.cont__title {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.button {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button:focus {
+    outline: 3px solid rgba(253, 99, 47, 0.5);
+    outline-offset: 2px;
+}
+
+.button--primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.button--primary:hover {
+    background-color: var(--secondary-color);
+}
+
+.button--outline {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.button--outline:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.button--text {
+    background-color: transparent;
+    color: var(--primary-color);
+    padding: 0;
+}
+
+.button--text:hover {
+    text-decoration: underline;
+}
+
+.button--rounded {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50px;
+}
+
+.button--rounded:hover {
+    background-color: var(--secondary-color);
+}
+
+.button--gradient {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+.button--gradient:hover {
+    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+}
+
+.button--glass {
+    background-color: rgba(253, 99, 47, 0.2);
+    backdrop-filter: blur(10px);
+    color: var(--primary-color);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.button--glass:hover {
+    background-color: rgba(253, 99, 47, 0.3);
+}
+
+.button--3d {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 6px 0 darken(var(--primary-color), 10%);
+    transform: translateY(-3px);
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.button--3d:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 0 darken(var(--primary-color), 10%);
+}
+
+.button--3d:active {
+    transform: translateY(0);
+    box-shadow: 0 0 0 darken(var(--primary-color), 10%);
+}
+
+.button--animated {
+    background-color: var(--primary-color);
+    color: white;
+    overflow: hidden;
+    position: relative;
+}
+
+.button--animated .button__text {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.button--animated .button__icon {
+    position: absolute;
+    right: -20px;
+    transition: right 0.3s ease;
+}
+
+.button--animated:hover .button__text {
+    transform: translateX(-10px);
+}
+
+.button--animated:hover .button__icon {
+    right: 20px;
+}
+
+.button--neumorphic {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    box-shadow: 5px 5px 10px #d1d1d3, -5px -5px 10px #ffffff;
+}
+
+.button--neumorphic:hover {
+    box-shadow: inset 5px 5px 10px #d1d1d3, inset -5px -5px 10px #ffffff;
+}
+
+@media (max-width: 768px) {
+    .button-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .button-grid {
+        grid-template-columns: 1fr;
+    }
+}
