@@ -1,7 +1,12 @@
 Login
 Register
 
-User Model
+User Model      Post Model    
+ name             Image
+ email            Category
+ password         Title
+                 Location
+                 Description
 
 
 Dashboard - posts 
