@@ -8,7 +8,7 @@ const {
 } = require("../controllers/signupController");
 
 router.get("/", (req,res)=>{
-    res.render("signup", {msg:false});
+    res.render("signup", { msg:false });
 });
 
 router.post("/register", register_user);
