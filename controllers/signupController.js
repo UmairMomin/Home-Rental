@@ -17,7 +17,7 @@ const register_user = async (req,res)=>{
         res.render("signup",{ msg : true });
     }
     else{
-        const user_data = await user.save();
+        await user.save();
         res.redirect('/login');
     }
    }

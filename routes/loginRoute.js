@@ -11,6 +11,9 @@ router.get("/", (req,res)=>{
     res.render('login');
 });
 
-router.post("/userlogin", loginUser)
+router.post("/userlogin", loginUser)   //localhost:3000/login/userlogin
 
 module.exports = router;
+
+
+//localhost:3000/login
