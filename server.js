@@ -10,11 +10,13 @@ app.use(express.static(__dirname + "/public"));
 const index = require("./routes/indexRoute");
 const login = require("./routes/loginRoute");
 const signup = require("./routes/signupRoute");
+const dashbaord = require("./routes/dashboardRoute");
 
 
-app.use("/", login);
+app.use("/", index);
+app.use("/login", login);
 app.use("/signup", signup);
-app.use("/test", index);
+app.use("/dashboard", dashbaord)
 
 // Mongodb database connection
 const mongoose = require("mongoose");

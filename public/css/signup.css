@@ -13,6 +13,10 @@
     justify-content: center;
 }
 
+h3 {
+    margin-bottom: 15px;
+}
+
 .btn {
     padding: 7px 40px;
     background: linear-gradient(#b0effc, #02027f);

@@ -18,7 +18,7 @@ const register_user = async (req,res)=>{
     }
     else{
         const user_data = await user.save();
-        res.redirect('/');
+        res.redirect('/login');
     }
    }
    catch(error){

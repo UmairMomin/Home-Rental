@@ -6,15 +6,11 @@
     <title>Sign Up</title>
     <link
       rel="icon"
-      href="images/houselogo.png"
+      href="/images/houselogo.png"
       type="image/x-icon"
       id="tlogo"
     />
-<<<<<<< HEAD:views/signup.ejs
-    <link rel="stylesheet" href="css/signup.css" />
-=======
-    <link rel="stylesheet" href="/Home-Rental/public/css/signup.css" />
->>>>>>> 07b35e313534d834ccd494522d156262d7ae9e0e:views/signup.html
+    <link rel="stylesheet" href="/css/signup.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -32,7 +28,7 @@
             <span>House Hunting</span>
           </div>
           <div class="logo">
-            <img src="images/houselogo.png" alt="logo" />
+            <img src="/images/houselogo.png" alt="logo" />
           </div>
           <div class="slogan">
             <p>Find Your Perfect Home, Effortlessly!</p>
@@ -41,8 +37,11 @@
           </div>
         </div>
         <div class="details">
-          <form>
+          <form action="/signup/register" method="POST">
             <h1>Sign Up...</h1>
+            <% if (msg) { %>
+            <h3>User Already Registered</h3>
+            <% } %>
             <div class="form-group">
               <label for="email">
                 <i class="fa-regular fa-user icon"></i>
@@ -83,7 +82,7 @@
             <button class="btn">Sign Up!</button>
           </form>
           <div class="sign">
-            <p>Already have an account? <a href="/">Login</a></p>
+            <p>Already have an account? <a href="/login">Login</a></p>
           </div>
         </div>
       </div>

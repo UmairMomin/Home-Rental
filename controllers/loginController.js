@@ -16,14 +16,14 @@ const loginUser = async (req,res) => {
                 const tokenData = await jwt.sign({ userData }, "JWT_SECRET", {
                     expiresIn: "1h",
                 });
-                
+                res.redirect('/iam');
             }
             else {
-                res.render('login', {pageTitle: "Login", msg: true, mesg: false});
+                res.render('login',);
             }
         }
         else {
-            res.render('login', {pageTitle: "Login", msg: false, mesg: true});
+            res.render('login');
         }
     }
     catch(error){
