@@ -23,7 +23,7 @@ app.use("/login", login);
 app.use("/signup", signup);
 app.use("/dashboard", dashbaord)
 
-Mongodb database connection
+//Mongodb database connection
 const mongoose = require("mongoose");
 mongoose
   .connect(process.env.DATABASE_URL, { useNewUrlParser: true })
