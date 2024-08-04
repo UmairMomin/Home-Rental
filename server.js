@@ -18,7 +18,7 @@ app.use("/login", login);
 app.use("/signup", signup);
 app.use("/dashboard", dashbaord)
 
-// Mongodb database connection
+Mongodb database connection
 const mongoose = require("mongoose");
 mongoose
   .connect("mongodb+srv://umairMomin:Diamond%402022@cluster0.iebums1.mongodb.net/HomeRental", { useNewUrlParser: true })
