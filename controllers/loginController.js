@@ -21,11 +21,11 @@ const loginUser = async (req,res) => {
                 res.redirect('/iam');
             }
             else {
-                res.render('login');
+                res.render("login",{ msg: true });
             }
         }
         else {
-            res.render('login');
+            res.render("login",{ msg: true });
         }
     }
     catch(error){

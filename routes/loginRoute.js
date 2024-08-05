@@ -8,7 +8,7 @@ const {
 } = require("../controllers/loginController");
 
 router.get("/", (req,res)=>{
-    res.render('login');
+    res.render('login', { msg: false });
 });
 
 router.post("/userlogin", loginUser)   //localhost:3000/login/userlogin

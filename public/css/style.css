@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+
 body {
   margin: 0 auto;
   width: 90%;
@@ -31,20 +32,25 @@ body {
   padding-right: 1em;
 }
 
+
 .products {
+  width: 100%;
   display: flex;
+  justify-content: flex-start;
+  align-items: center;
   flex-wrap: wrap;
+  gap: 16px;
 }
 
 .product-card {
   position: relative;
   padding: 2%;
-  flex-grow: 1;
-  flex-basis: 16%;
   background: #fff;
-  text-align: center;
   background-color: #fff;
   box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.25);
+  flex: 1 1 calc(25% - 16px);
+  box-sizing: border-box;
+  margin: 8px
 }
 
 .product-image img {
@@ -53,6 +59,10 @@ body {
 
 .product-info {
   margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .product-category {
@@ -71,20 +81,23 @@ body {
 
   /* Select the first two */
   .product-card:first-child,
-.product-card:nth-child(2) {
+  .product-card:nth-child(2) {
     flex: 2 46%;
   }
 }
+
 @media (max-width: 600px) {
   .product-card {
     flex: 1 46%;
   }
 }
+
 @media (max-width: 480px) {
   .product-filter {
     flex-direction: column;
   }
 }
+
 @media (max-width: 480px) {
   .product-filter {
     flex-direction: column;

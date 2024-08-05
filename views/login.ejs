@@ -6,11 +6,11 @@
     <title>Login</title>
     <link
       rel="icon"
-      href="images/houselogo.png"
+      href="/images/houselogo.png"
       type="image/x-icon"
       id="tlogo"
     />
-    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="/css/login.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
     <link
@@ -26,7 +26,7 @@
             <span>House Hunting</span>
           </div>
           <div class="logo">
-            <img src="images/houselogo.png" alt="logo" />
+            <img src="/images/houselogo.png" alt="logo" />
           </div>
           <div class="slogan">
             <p>Find Your Perfect Home, Effortlessly!</p>
@@ -36,6 +36,9 @@
         </div>
         <div class="details">
           <form action="/login/userlogin" method="POST">
+            <% if (msg) { %>
+            <h3>Incorrect email or password!</h3>
+            <% } %>
             <div class="form-group">
               <label for="email">
                 <span class="icon">&#x1F464;</span>

@@ -12,43 +12,38 @@
 <nav class="product-filter">
   <img src="/images/logo.png" height="80px" width="70px"></img>
   <h1>Home Rental</h1>
- 
+
+  <form action="/dashboard/posts" class="addpostsbutton" >
+    <button type="submit">Add posts</button>
+  <form>
+
   <div class="sort">
     <div class="collection-sort"><label for="">Filter by:</label><select name="" id="">
         <option value="">All weights</option>
         <option value="">Lace Weight</option>
-        <option value="">4-Ply</option>
-        <option value="">Double Knit</option>
-        <option value="">Aran Weight</option>
-        <option value="">Chunky</option>
-        <option value="">Super Chunky</option>
       </select></div>
     <div class="collection-sort"><label for="">Sort by:</label><select name="" id="">
         <option value="">Brand</option>
         <option value="">Lang Yarns</option>
-        <option value="">Schoppel-wolle</option>
-        <option value="">Hjertegarn</option>
-        <option value="">Addi</option>
-        <option value="">Lanartus</option>
-        <option value="">Filati Bertagna</option>
-        <option value="">Filatura Di Crosa</option>
-        <option value="">myboshi</option>
       </select></div>
   </div>
 </nav>
 <section class="products">
+  <% for (var i=0; i<data.length; i++) { %>
   <div class="product-card">
     <div class="product-image"><img src="/images/logo.png" alt="" /></div>
     <div class="product-info">
-      <h4 class="product-name">Kalyan Homes</h4>
+      <h4 class="product-name"><%= data[i].Name %></h4>
       <button class="button button--animated">
         <span class="button__text">View Details !!</span>
         <span class="button__icon">→</span>
     </button>
-      <h5 class="product-description">Description here : 3 bhk well furnished flat , near metro station </h5>
+    <h5 class="product-address"><%= data[i].Address %></h5>
+      <h5 class="product-description"><%= data[i].Description %></h5>
     </div>
-    <div class="product-category"><span>categories</span></div>
+    <div class="product-category"><span><%= data[i].Category %></span></div>
   </div>
+  <% } %>
 </section>
   
 </body>

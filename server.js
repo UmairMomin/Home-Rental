@@ -21,7 +21,7 @@ const dashbaord = require("./routes/dashboardRoute");
 app.use("/", index);
 app.use("/login", login);       
 app.use("/signup", signup);
-app.use("/dashboard", dashbaord)
+app.use("/dashboard", dashbaord);
 
 //Mongodb database connection
 const mongoose = require("mongoose");

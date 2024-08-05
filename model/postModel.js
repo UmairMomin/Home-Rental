@@ -2,11 +2,15 @@ const mongoose = require('mongoose');
 
 const posts = mongoose.Schema(
     {
-        Title:{
+        Name:{
             type: String,
             required: true
         },
         Category:{
+            type: String,
+            required: true
+        },
+        Address:{
             type: String,
             required: true
         },
@@ -15,10 +19,6 @@ const posts = mongoose.Schema(
             required: true
         },
         ImageURL:{
-            type: String,
-            required: true
-        },
-        ContactDetails:{
             type: String,
             required: true
         },
