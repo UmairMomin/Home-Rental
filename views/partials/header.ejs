@@ -1,0 +1,28 @@
+<header>
+  <div class="nav_content">
+    <div class="logo">
+      <img src="/images/houselogo.png" alt="" />
+      <span class="lname">HOUSE HUNTING</span>
+    </div>
+    <div class="nav_links">
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
+      </ul>
+    </div>
+    <div class="profile_section" onclick="toggleProfileMenu()">
+      <img
+        src="<%= user ? user.profileImage : '/images/profile.png' %>"
+        alt="Profile Image"
+        class="profile_image" />
+      <span class="profile_name"><%= user ? user.Name : 'Guest' %></span>
+      <% if (user) { %>
+      <div class="profile_menu" id="profileMenu">
+        <ul>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</header>

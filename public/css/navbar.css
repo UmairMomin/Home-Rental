@@ -1,0 +1,105 @@
+header {
+    position: fixed;
+    top: 44px;
+    left: 50%;
+    width: 90%;
+    transform: translateX(-50%);
+    z-index: 20;
+    height: 6rem;
+    background-color: #E2DAD6;
+}
+
+.nav_content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    color: black;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    padding-left: 44px;
+}
+
+.lname {
+    font-size: 30px;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.logo img {
+    width: 6rem;
+}
+
+
+.nav_links ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    list-style: none;
+    gap: 25px;
+    font-size: 20px;
+}
+
+.nav_links ul li a {
+    color: black;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.profile_section {
+    display: flex;
+    align-items: center;
+    margin-right: 44px;
+    /* Adjust as necessary */
+    position: relative;
+    cursor: pointer;
+}
+
+.profile_image {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profile_name {
+    font-size: 20px;
+}
+
+.profile_menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    width: 150px;
+}
+
+.profile_menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profile_menu ul li {
+    padding: 10px;
+}
+
+.profile_menu ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+.profile_menu ul li a:hover {
+    background-color: #f0f0f0;
+}

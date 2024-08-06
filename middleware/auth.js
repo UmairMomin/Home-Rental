@@ -1,35 +1,57 @@
 const User = require("../model/userModel");
 const bcryptjs = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-require('dotenv').config();
+require("dotenv").config();
 
 // Verify JWT token
 const verifyToken = async (req, res, next) => {
-    const token = req.cookies.token;
-    if (!token) {
-      return res.json({ message: "Authentication token not found" });
-    }
-    try {
-      const decoded = jwt.verify(token, process.env.JWT_SECRET);
-      req.userId = decoded.userId; // Attach decoded payload to request object
+  const token = req.cookies.token;
+  if (!token) {
+    return res.render("error", { msg: false, msg1: true });
+  }
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    req.userId = decoded.userId; // Attach decoded payload to request object
+    next();
+  } catch (err) {
+    res.send(err.message);
+  }
+};
+
+// Get token details
+function authenticateToken(req, res, next) {
+  const token = req.cookies.token;
+  if (!token) {
+    req.user = null;
+    return next();
+  }
+
+  try {
+    jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+      if (err) {
+        req.user = null;
+      } else {
+        req.user = decoded.userData;
+      }
       next();
-    } catch (err) {
-      res.send(err.message);
-    }
-  };
+    });
+  } catch (err) {
+    res.send(err.message);
+  }
+}
 
 // For Bcrypt password
 const securePassword = async (password) => {
-    try {
-      const passwordHash = await bcryptjs.hash(password, 10);
-      return passwordHash;
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
+  try {
+    const passwordHash = await bcryptjs.hash(password, 10);
+    return passwordHash;
+  } catch (error) {
+    console.log(error.message);
+  }
+};
 
-
-  module.exports = {
-    securePassword,
-    verifyToken
+module.exports = {
+  securePassword,
+  verifyToken,
+  authenticateToken,
 };

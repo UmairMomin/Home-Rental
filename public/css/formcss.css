@@ -1,29 +1,30 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+
 }
 
-body{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: linear-gradient(#00f5f5, #720034);
+    background-color: #6482AD;
 }
 
-.container{
+.container {
+    font-family: sans-serif;
     max-width: 650px;
     padding: 28px;
     margin: 0 28px;
     border-radius: 10px;
     overflow: hidden;
-    background: rgba(0, 0, 0, .2);
+    background-color: #7FA1C3;
     box-shadow: 0 15px 20px rgba(0, 0, 0, .6);
 }
 
-h2{
+h2 {
     font-size: 26px;
     font-weight: bold;
     text-align: left;
@@ -32,36 +33,42 @@ h2{
     border-bottom: 1px solid silver;
 }
 
-.content{
+.content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 20px 0;
 }
 
-.input-box{
+.img input {
+    font-size: 20px;
+    padding-top: 5px !important;
+}
+
+.input-box {
     display: flex;
     flex-wrap: wrap;
     width: 50%;
     padding-bottom: 15px;
 }
 
-.input-box:nth-child(2n){
+.input-box:nth-child(2n) {
     justify-content: end;
 }
 
-.input-box label, .gender-title{
+.input-box label,
+.gender-title {
     width: 95%;
     color: #FFF;
     font-weight: bold;
     margin: 5px 0;
 }
 
-.gender-title{
+.gender-title {
     font-size: 16px;
 }
 
-.input-box input{
+.input-box input {
     height: 40px;
     width: 95%;
     padding: 0 10px;
@@ -70,24 +77,25 @@ h2{
     outline: none;
 }
 
-.input-box input:is(:focus,:valid){
+.input-box input:is(:focus, :valid) {
     box-shadow: 0 3px 6px rgba(0, 0, 0, .2);
 }
 
-.gender-category label{
+.gender-category label {
     padding: 0 20px 0 5px;
     font-size: 14px;
 }
 
-.gender-category{
+.gender-category {
     color: gainsboro;
 }
 
-.gender-category label, .gender-category input{
+.gender-category label,
+.gender-category input {
     cursor: pointer;
 }
 
-.alert p{
+.alert p {
     font-size: 14px;
     font-style: italic;
     text-align: justify;
@@ -97,23 +105,23 @@ h2{
     line-height: 1.5;
 }
 
-.alert a{
+.alert a {
     font-weight: bold;
     text-decoration: none;
     color: skyblue;
 }
 
-.alert a:hover{
+.alert a:hover {
     font-weight: bold;
     text-decoration: underline;
     color: #ccc;
 }
 
-.button-container{
+.button-container {
     margin: 15px 0;
 }
 
-.button-container button{
+.button-container button {
     width: 100%;
     font-weight: bold;
     margin-top: 10px;
@@ -123,36 +131,37 @@ h2{
     color: #fff;
     border: none;
     border-radius: 10px;
-    background-image: linear-gradient(to right, #aa076b, #61045f);
+    color: rgb(68, 2, 64);
     cursor: pointer;
     transition: .3s;
 }
 
-.button-container button:hover{
-    background-image: linear-gradient(to right, #61045f, #aa076b);
-}
-
-@media(max-width: 600px){
-    .container{
+@media(max-width: 600px) {
+    .container {
         min-width: 280px;
     }
-    .content{
+
+    .content {
         max-height: 380px;
         overflow: auto;
     }
-    .input-box{
+
+    .input-box {
         margin-bottom: 12px;
         width: 100%;
     }
-    .input-box:nth-child(2n){
+
+    .input-box:nth-child(2n) {
         justify-content: space-between;
     }
-    .gender-category{
+
+    .gender-category {
         display: flex;
         justify-content: space-between;
         width: 60%;
     }
-    .content::-webkit-scrollbar{
+
+    .content::-webkit-scrollbar {
         width: 0;
     }
 }

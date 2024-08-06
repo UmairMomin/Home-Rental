@@ -1,14 +1,14 @@
-let express = require('express');
+let express = require("express");
 let port = 3000;
 let app = express();
-const path = require('path');
-const cookieParser = require('cookie-parser');
+const path = require("path");
+const cookieParser = require("cookie-parser");
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-require('dotenv').config();
-app.set('view engine', 'ejs');
-app.set('views', './views');
+require("dotenv").config();
+app.set("view engine", "ejs");
+app.set("views", "./views");
 app.use(express.static(__dirname + "/public"));
 
 // Routes
@@ -19,7 +19,7 @@ const dashbaord = require("./routes/dashboardRoute");
 
 // Using the routes
 app.use("/", index);
-app.use("/login", login);       
+app.use("/login", login);
 app.use("/signup", signup);
 app.use("/dashboard", dashbaord);
 
@@ -34,10 +34,7 @@ mongoose
     console.log("Error connecting to MongoDB", err);
   });
 
-
 app.listen(port, (err) => {
-    if (err)
-        throw err
-    else
-        console.log(`server started on ${port}`);
+  if (err) throw err;
+  else console.log(`server started on ${port}`);
 });

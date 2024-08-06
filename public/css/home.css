@@ -3,64 +3,41 @@
     padding: 0;
     box-sizing: border-box;
 }
-.main{
-    top: 20%;
+
+body {
+    background-color: #6482AD;
+}
+
+.main_conatiner {
     width: 90%;
-    left: 20%;
 }
 
-.name{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    padding: 0px !important;
-}
-
-.name img{  
-    width: 200px;
-    padding: 10px;
-    padding-right: 20px;
-}
-
-.name p{
-    font-size: 60px;
-    font-family: "Lobster", sans-serif;
-    font-weight: 200;
-    font-style: normal;
-    color: rgba(0, 0, 0, 0.7);
-    text-size-adjust: 100%;
-}
-
-.info{
+.info {
     width: 100%;
+    margin: 95px 95px;
+    position: relative;
     display: flex;
-    background-color: rgb(230, 230, 230);
-    align-self: center;
-    margin-left: 50px;
+    margin-top: 10rem;
+    background-color: #7FA1C3;
     border-radius: 10px;
 }
 
-.info .img{
-    /* background-image: url(/Home-Rental/public/images/homephoto.webp); */
-    margin-left: 30px;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    align-content: center;
-    border: radius 5px ;
+.info img {
+    padding: 50px;
+    height: 100%;
+    width: 720px;
 }
 
-.info img{
-    width:500px;
-    /* border-radius:10% ; */
-    margin: 20px 0px;
-}
-.head{
-margin-top: 40px;
+
+.head {
+    position: relative;
+    padding-top: 50px;
+    margin: 110px 40px;
+    background-color: #E2DAD6;
+    border-radius: 50px;
 }
 
-.head p{
+.head p {
     line-height: 40px;
     font-family: "Rufina", serif;
     font-weight: 400;
@@ -69,19 +46,18 @@ margin-top: 40px;
     padding: 0px 50px;
     margin-bottom: 20px;
     color: rgba(33, 33, 33, 0.709);
-    text-size-adjust: 100%;
 }
 
-.head #home{
+.head #home {
     font-size: 45px;
     text-align: center;
     font-family: "Great Vibes", cursive;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 40px;
-margin-bottom: 20px;
-color: rgb(68, 2, 64);
-text-size-adjust: 100%;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 40px;
+    margin-bottom: 20px;
+    color: rgb(68, 2, 64);
+    text-size-adjust: 100%;
 }
 
 .buttons {
@@ -100,41 +76,46 @@ text-size-adjust: 100%;
     font-size: 25px;
     font-family: 'Times New Roman', Times, serif;
     justify-content: center;
-    opacity: 0.8;
     border: none;
     border-radius: 10px;
     font-weight: 600;
     text-size-adjust: 100%;
-    color:  rgb(68, 2, 64);
+    color: rgb(68, 2, 64);
 }
 
 
 @media only screen and (max-width: 768px) {
-    .info img{
-      width: 150px;
+    .info img {
+        width: 150px;
     }
-    .head #home{
+
+    .head #home {
         font-size: 35px;
     }
-    .head p{
+
+    .head p {
         font-size: 15px;
     }
-    .buttons button{
+
+    .buttons button {
         font-size: 20px;
     }
 }
 
 @media only screen and (max-width: 480px) {
-    .info img{
+    .info img {
         display: none;
     }
-    .head #home{
+
+    .head #home {
         font-size: 35px;
     }
-    .head p{
+
+    .head p {
         font-size: 15px;
     }
-    .buttons button{
+
+    .buttons button {
         font-size: 20px;
     }
 

@@ -1,14 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
 
 body {
-  margin: 0 auto;
-  width: 90%;
-  max-width: 1240px;
-  font-family: "Roboto", sans-serif;
-  background-color: #e6e6e6;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #6482AD;
 }
 
-.product-filter {
+/* .product-filter {
   display: flex;
 }
 
@@ -22,6 +21,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  margin-top: 10rem;
 }
 
 .sort label {
@@ -30,56 +30,73 @@ body {
   font-weight: 500;
   line-height: 2em;
   padding-right: 1em;
-}
-
+} */
 
 .products {
-  width: 100%;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
   flex-wrap: wrap;
-  gap: 16px;
+  justify-content: flex-start;
+  margin: 10rem auto;
+  width: 90%;
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .product-card {
-  position: relative;
-  padding: 2%;
-  background: #fff;
+  flex: 0 1 calc(25% - 20px);
+  max-width: calc(25% - 20px);
+  margin: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
   background-color: #fff;
-  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.25);
-  flex: 1 1 calc(25% - 16px);
-  box-sizing: border-box;
-  margin: 8px
+  display: flex;
+  flex-direction: column;
 }
 
 .product-image img {
-  max-width: 100%;
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
 }
 
 .product-info {
-  margin-top: auto;
+  font-size: 18px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  padding: 15px;
+  flex-grow: 1;
+  overflow: hidden;
 }
 
-.product-category {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 0.3em 0.6em;
-  background-color: #fff;
-  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.25);
+.product-name,
+.product-address,
+.product-description {
+  text-align: center;
+  margin: 5px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
+
+.button {
+  margin-top: 10px;
+}
+
+
 
 @media (max-width: 920px) {
   .product-card {
     flex: 1 21%;
   }
 
-  /* Select the first two */
   .product-card:first-child,
   .product-card:nth-child(2) {
     flex: 2 46%;

@@ -8,56 +8,50 @@
       rel="icon"
       href="/images/houselogo.png"
       type="image/x-icon"
-      id="tlogo"
-    />
+      id="tlogo" />
+    <script src="/js/index.js"></script>
     <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/navbar.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
     <link
       href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lobster&family=Nova+Mono&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rufina:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
   </head>
 
   <body>
-    <div class="back">
-      <div class="main">
-        <div class="name">
-          <img src="/images/houselogo.png" alt="logo" />
-          <p>House Hunting</p>
+    <div class="main_conatiner">
+      <%- include('partials/header.ejs') %>
+      <div class="info">
+        <div class="img">
+          <img src="/images/home1.png" alt="" />
         </div>
-        <div class="info">
-          <div class="img">
-            <img src="/images/home1.png" alt="" />
-          </div>
-          <div class="head">
-            <p id="home">Home</p>
-            <p>
-              We believe that finding your perfect home should be an enjoyable
-              and hassle-free experience. Whether you're looking to rent, buy,
-              or sell, our platform offers an unparalleled level of convenience
-              and efficiency, tailored to meet all your property needs. Simplify
-              the property search process and make it more accessible and
-              efficient.
-            </p>
-            <br />
-            <p>
-              Ready to embark on your property journey? Sign up today and
-              explore the endless possibilities with House Rental Project—your
-              gateway to a better living experience.
-            </p>
-            <div class="buttons">
-              <a href="/login">
-                <button class="btn" style="background-color: #fffdfdac">
-                  Login
-                </button></a
-              >
-              <a href="/signup">
-                <button class="btn" style="background-color: #fffdfdac">
-                  Sign Up
-                </button></a
-              >
-            </div>
+        <div class="head">
+          <p id="home">Home</p>
+          <p>
+            We believe that finding your perfect home should be an enjoyable and
+            hassle-free experience. Whether you're looking to rent, buy, or
+            sell, our platform offers an unparalleled level of convenience and
+            efficiency, tailored to meet all your property needs. Simplify the
+            property search process and make it more accessible and efficient.
+          </p>
+          <br />
+          <p>
+            Ready to embark on your property journey? Sign up today and explore
+            the endless possibilities with House Rental Project—your gateway to
+            a better living experience.
+          </p>
+          <div class="buttons">
+            <a href="/login">
+              <button class="btn" style="background-color: #fffdfdac">
+                Login
+              </button></a
+            >
+            <a href="/signup">
+              <button class="btn" style="background-color: #fffdfdac">
+                Sign Up
+              </button></a
+            >
           </div>
         </div>
       </div>

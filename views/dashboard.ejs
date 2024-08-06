@@ -6,42 +6,37 @@
   <title>Dashboard</title>
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/style2.css" />
+  <link rel="stylesheet" href="/css/navbar.css">
+  <script src="/js/index.js"></script>
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<nav class="product-filter">
-  <img src="/images/logo.png" height="80px" width="70px"></img>
-  <h1>Home Rental</h1>
-
-  <form action="/dashboard/posts" class="addpostsbutton" >
-    <button type="submit">Add posts</button>
-  <form>
-
-  <div class="sort">
-    <div class="collection-sort"><label for="">Filter by:</label><select name="" id="">
-        <option value="">All weights</option>
-        <option value="">Lace Weight</option>
-      </select></div>
-    <div class="collection-sort"><label for="">Sort by:</label><select name="" id="">
-        <option value="">Brand</option>
-        <option value="">Lang Yarns</option>
-      </select></div>
-  </div>
-</nav>
+  <%- include('partials/header.ejs') %>
+<!-- <div class="sort">
+  <div class="collection-sort"><label for="">Filter by:</label><select name="" id="">
+      <option value="">All weights</option>
+      <option value="">Lace Weight</option>
+    </select></div>
+  <div class="collection-sort"><label for="">Sort by:</label><select name="" id="">
+      <option value="">Brand</option>
+      <option value="">Lang Yarns</option>
+    </select></div>
+</div> -->
 <section class="products">
   <% for (var i=0; i<data.length; i++) { %>
   <div class="product-card">
-    <div class="product-image"><img src="/images/logo.png" alt="" /></div>
+    <div class="product-image"><img src="<%= data[i].ImageURL %>" alt="" /></div>
     <div class="product-info">
+      <div class="product-category"><span><%= data[i].Category %></span></div>
       <h4 class="product-name"><%= data[i].Name %></h4>
-      <button class="button button--animated">
-        <span class="button__text">View Details !!</span>
-        <span class="button__icon">→</span>
-    </button>
+      <a href="/prod_details">
+        <button class="button button--animated">
+          <span class="button__text">View Details !!</span>
+          <span class="button__icon">→</span>
+      </button>
+      </a>
     <h5 class="product-address"><%= data[i].Address %></h5>
       <h5 class="product-description"><%= data[i].Description %></h5>
     </div>
-    <div class="product-category"><span><%= data[i].Category %></span></div>
   </div>
   <% } %>
 </section>
