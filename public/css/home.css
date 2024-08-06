@@ -12,7 +12,36 @@ body {
     width: 90%;
 }
 
+<<<<<<< HEAD
 .info {
+=======
+.name{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 0px !important;
+}
+
+.name img{  
+    width: 200px;
+    padding: 10px;
+    padding-right: 20px;
+}
+
+.name p{
+    font-size: 60px;
+    /* font-family: "Rafina", sans-serif; */
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    font-style: normal;
+    color: rgba(0, 0, 0, 0.7);
+    text-size-adjust: 100%;
+    text-transform: uppercase;
+}
+
+.info{
+>>>>>>> 179058f089d4c8ead190ac0e82855cc01a5b8289
     width: 100%;
     margin: 95px 95px;
     position: relative;
