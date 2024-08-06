@@ -30,6 +30,9 @@ header {
     font-size: 30px;
     padding: 20px;
     margin-top: 10px;
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+    font-style: normal;
 }
 
 .logo img {
