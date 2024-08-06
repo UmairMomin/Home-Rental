@@ -57,6 +57,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 450px;
+  padding: 20px;
 }
 
 .product-image {

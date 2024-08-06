@@ -67,7 +67,7 @@ const add_posts = async (req, res) => {
             Category: req.body.category,
             Address: req.body.address,
             Description: req.body.description,
-            ImageURL: "/uploads/" + req.file.filename,
+            ImageURL: "/uploads/posts" + req.file.filename,
             Price: req.body.price,
           });
 
