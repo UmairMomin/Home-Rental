@@ -12,10 +12,7 @@ body {
     width: 90%;
 }
 
-<<<<<<< HEAD
-.info {
-=======
-.name{
+.name {
     display: flex;
     justify-content: center;
     text-align: center;
@@ -23,13 +20,13 @@ body {
     padding: 0px !important;
 }
 
-.name img{  
+.name img {
     width: 200px;
     padding: 10px;
     padding-right: 20px;
 }
 
-.name p{
+.name p {
     font-size: 60px;
     /* font-family: "Rafina", sans-serif; */
     font-family: "Playfair Display", serif;
@@ -40,8 +37,7 @@ body {
     text-transform: uppercase;
 }
 
-.info{
->>>>>>> 179058f089d4c8ead190ac0e82855cc01a5b8289
+.info {
     width: 100%;
     margin: 95px 95px;
     position: relative;
