@@ -1,10 +1,19 @@
 const Posts = require("../model/postModel");
+const fs = require("fs");
 const multer = require("multer");
 const path = require("path");
 
+// Ensure the uploads directory exists
+const uploadsDir = path.join(__dirname, "..", "public", "uploads", "posts");
+if (!fs.existsSync(uploadsDir)) {
+  fs.mkdirSync(uploadsDir, { recursive: true });
+}
+
 // Set storage engine
 const storage = multer.diskStorage({
-  destination: path.join(__dirname, "public/uploads"),
+  destination: function (req, file, cb) {
+    cb(null, uploadsDir); // Use the uploadsDir defined above
+  },
   filename: function (req, file, cb) {
     cb(
       null,

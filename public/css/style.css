@@ -56,17 +56,22 @@ body {
   background-color: #fff;
   display: flex;
   flex-direction: column;
+  height: 450px;
+}
+
+.product-image {
+  padding: 20px;
 }
 
 .product-image img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
-  max-height: 200px;
-  object-fit: cover;
+  max-height: 300px;
+  object-fit: contain;
 }
 
 .product-info {
-  font-size: 18px;
+  font-size: 25px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
