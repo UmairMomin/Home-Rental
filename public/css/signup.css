@@ -58,9 +58,11 @@ h3 {
 
 .name {
     font-size: 40px;
-    font-family: "Lobster", sans-serif;
-    font-weight: 200;
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    line-height: 40px;
     font-style: normal;
+    text-transform: uppercase;
     margin-bottom: 10px;
     color: rgba(0, 0, 0, 0.743);
     text-size-adjust: 100%;

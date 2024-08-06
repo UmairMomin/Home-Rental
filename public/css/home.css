@@ -25,11 +25,13 @@
 
 .name p{
     font-size: 60px;
-    font-family: "Lobster", sans-serif;
-    font-weight: 200;
+    /* font-family: "Rafina", sans-serif; */
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
     font-style: normal;
     color: rgba(0, 0, 0, 0.7);
     text-size-adjust: 100%;
+    text-transform: uppercase;
 }
 
 .info{
