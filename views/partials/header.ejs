@@ -6,13 +6,16 @@
     </div>
     <div class="nav_links">
       <ul>
-        <li><a href="">Home</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="/dashboard">Dashboard</a></li>
+        <% if (user && user.role == "admin") { %>
+        <li><a href="/admin">Admin</a></li>
+        <% } %>
       </ul>
     </div>
     <div class="profile_section" onclick="toggleProfileMenu()">
       <img
-        src="<%= user ? user.profileImage : '/images/profile.png' %>"
+        src="/images/profile.png"
         alt="Profile Image"
         class="profile_image" />
       <span class="profile_name"><%= user ? user.Name : 'Guest' %></span>

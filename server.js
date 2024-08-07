@@ -16,12 +16,16 @@ const index = require("./routes/indexRoute");
 const login = require("./routes/loginRoute");
 const signup = require("./routes/signupRoute");
 const dashbaord = require("./routes/dashboardRoute");
+const prodDetails = require("./routes/prodDetailsRoute");
+const adminRoute = require("./routes/adminRoute");
 
 // Using the routes
 app.use("/", index);
 app.use("/login", login);
 app.use("/signup", signup);
 app.use("/dashboard", dashbaord);
+app.use("/prod_details", prodDetails);
+app.use("/admin", adminRoute);
 
 //Mongodb database connection
 const mongoose = require("mongoose");
