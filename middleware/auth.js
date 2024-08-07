@@ -51,23 +51,25 @@ const securePassword = async (password) => {
 };
 
 //Admin Middleware
-const isAdmin = (req, res, next) => {
+const isAdmin = async (req, res, next) => {
   const token = req.cookies.token;
+
   if (!token) {
-    return res.render("error", { msg: "Please Login to continue" });
+    return res.status(403).json({ message: "No token provided!" });
   }
-  try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+  jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+    if (err) {
+      return res.status(401).json({ message: "Unauthorized!" });
+    }
+
     req.user = decoded;
+
     if (req.user && req.user.role === "admin") {
       next();
     } else {
-      res.render("error", { msg: "Admin Role Required" });
+      res.status(403).json({ msg: "Require Admin Role!" });
     }
-    next();
-  } catch (err) {
-    res.send(err.message);
-  }
+  });
 };
 
 module.exports = {

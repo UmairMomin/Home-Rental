@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const bodyParser = require("body-parser");
 router.use(bodyParser.urlencoded({ extended: true }));
+const cookieParser = require("cookie-parser");
+router.use(cookieParser());
 const {
   verifyToken,
   authenticateToken,
@@ -15,7 +17,7 @@ const {
   update_posts,
 } = require("../controllers/adminController");
 
-router.get("/", verifyToken, isAdmin, get_posts);
+router.get("/", isAdmin, get_posts);
 
 router.get("/delete/:id", isAdmin, delete_posts);
 
