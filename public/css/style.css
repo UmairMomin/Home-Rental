@@ -11,26 +11,33 @@ body {
   position: relative;
   top: 10rem;
   padding: 40px;
-  width: 90%;
+  max-width: 90%;
   margin: auto;
 }
 
 .main_container {
-  width: 100%;
+  max-width: 100%;
 }
 
 .row {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  /* Adjust the gap between cards as needed */
 }
 
 .col {
-  width: 100%;
-  max-width: 25%;
-  padding: 0 10px;
+  flex: 1 1 calc(25% - 20px);
+  /* 25% width minus the gap */
+  max-width: calc(25% - 20px);
+  /* Ensure it doesn't exceed 25% minus the gap */
+  box-sizing: border-box;
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 30px;
   height: 500px;
   background-color: #E2DAD6;
@@ -44,7 +51,6 @@ body {
 }
 
 .card_content {
-  position: relative;
   padding: 10px;
   text-align: center;
   font-size: 25px;
@@ -84,127 +90,3 @@ body {
   text-size-adjust: 100%;
   color: rgb(68, 2, 64);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .products {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  margin: 10rem auto;
-  width: 90%;
-}
-
-.product-container {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-.product-card {
-  flex: 0 1 calc(25% - 20px);
-  max-width: calc(25% - 20px);
-  margin: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  overflow: hidden;
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  height: 450px;
-  padding: 20px;
-}
-
-.product-image img {
-  max-width: 100%;
-  height: auto;
-  max-height: 300px;
-  object-fit: contain;
-}
-
-.product-info {
-  font-size: 25px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 15px;
-  flex-grow: 1;
-  overflow: hidden;
-}
-
-.product-name,
-.product-address,
-.product-description {
-  text-align: center;
-  margin: 5px 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.button {
-  margin-top: 10px;
-}
-
-
-
-@media (max-width: 920px) {
-  .product-card {
-    flex: 1 21%;
-  }
-
-  .product-card:first-child,
-  .product-card:nth-child(2) {
-    flex: 2 46%;
-  }
-}
-
-@media (max-width: 600px) {
-  .product-card {
-    flex: 1 46%;
-  }
-}
-
-@media (max-width: 480px) {
-  .product-filter {
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 480px) {
-  .product-filter {
-    flex-direction: column;
-  }
-
-  .sort {
-    align-self: flex-start;
-  }
-} */

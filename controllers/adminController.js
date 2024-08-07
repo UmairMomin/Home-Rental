@@ -3,7 +3,7 @@ const Posts = require("../model/postModel");
 const get_posts = async (req, res) => {
   try {
     const postData = await Posts.find();
-    res.render("admin", { data: postData, user: req.user });
+    res.render("admin", { data: postData, user: req.user.userData });
   } catch (error) {
     res.send(error);
   }
@@ -14,7 +14,7 @@ const delete_posts = async (req, res) => {
     const postId = req.params.id;
     await Posts.deleteOne({ _id: postId });
     const postData = await Posts.find();
-    res.render("admin", { data: postData, user: req.user });
+    res.render("admin", { data: postData, user: req.user.userData });
   } catch (err) {
     res.send(err);
   }

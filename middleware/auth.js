@@ -55,19 +55,17 @@ const isAdmin = async (req, res, next) => {
   const token = req.cookies.token;
 
   if (!token) {
-    return res.status(403).json({ message: "No token provided!" });
+    return res.render("error", { msg: "No token provided!" });
   }
   jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
     if (err) {
-      return res.status(401).json({ message: "Unauthorized!" });
+      return res.render("error", { msg: "Unauthorized!" });
     }
-
     req.user = decoded;
-
-    if (req.user && req.user.role === "admin") {
+    if (req.user && req.user.userData.role === "admin") {
       next();
     } else {
-      res.status(403).json({ msg: "Require Admin Role!" });
+      return res.render("error", { msg: "Require Admin Role!" });
     }
   });
 };
