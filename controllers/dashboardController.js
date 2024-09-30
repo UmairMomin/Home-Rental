@@ -59,7 +59,11 @@ const add_posts = async (req, res) => {
       res.render("form", { msg: err, user: req.user });
     } else {
       if (req.file == undefined) {
-        res.render("form", { msg: "No file selected!", user: req.user });
+        res.render("form", {
+          msg: "No file selected!",
+          user: req.user,
+          data: false,
+        });
       } else {
         try {
           const posts = new Posts({
@@ -75,6 +79,7 @@ const add_posts = async (req, res) => {
           res.render("form", {
             msg: "Post Added Successfully",
             user: req.user,
+            data: false,
           });
         } catch (error) {
           res.send(error);
@@ -84,7 +89,44 @@ const add_posts = async (req, res) => {
   });
 };
 
+const update_posts = async (req, res) => {
+  upload(req, res, async (err) => {
+    if (err) {
+      res.render("form", { msg: err, user: req.user });
+    } else {
+      try {
+        const { id } = req.body;
+        const updatedData = {
+          Name: req.body.name,
+          Category: req.body.category,
+          Address: req.body.address,
+          Description: req.body.description,
+          Price: req.body.price,
+        };
+
+        if (req.file) {
+          updatedData.ImageURL = "/uploads/posts/" + req.file.filename;
+        }
+
+        await Posts.findByIdAndUpdate(id, updatedData);
+        res.render("form", {
+          msg: "Post Updated Successfully",
+          user: req.user,
+          data: false,
+        });
+      } catch (error) {
+        res.render("form", {
+          msg: "Error updating post",
+          user: req.user,
+          data: req.body,
+        });
+      }
+    }
+  });
+};
+
 module.exports = {
   add_posts,
   get_posts,
+  update_posts,
 };

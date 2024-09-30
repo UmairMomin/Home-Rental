@@ -39,10 +39,11 @@ body {
 
 .info {
     width: 100%;
-    margin: 95px 95px;
     position: relative;
+    top: 10rem;
+    margin: 0 78px;
     display: flex;
-    margin-top: 10rem;
+    top: 10rem;
     background-color: #7FA1C3;
     border-radius: 10px;
 }

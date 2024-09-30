@@ -14,7 +14,12 @@ router.get("/iam", verifyToken, (req, res) => {
 });
 
 router.get("/prod_details", (req, res) => {
-  res.render("product-details");
+  res.render("product-details", { user: req.user });
+});
+
+router.get("/logout", authenticateToken, (req, res) => {
+  res.clearCookie("token");
+  res.redirect("/");
 });
 
 module.exports = router;

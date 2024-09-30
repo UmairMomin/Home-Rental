@@ -7,11 +7,11 @@ require("dotenv").config();
 const verifyToken = async (req, res, next) => {
   const token = req.cookies.token;
   if (!token) {
-    return res.render("error", { msg: false, msg1: true });
+    return res.render("error", { msg: "Please Login to continue" });
   }
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.userId = decoded.userId; // Attach decoded payload to request object
+    req.userId = decoded.userId;
     next();
   } catch (err) {
     res.send(err.message);
@@ -50,8 +50,29 @@ const securePassword = async (password) => {
   }
 };
 
+//Admin Middleware
+const isAdmin = async (req, res, next) => {
+  const token = req.cookies.token;
+
+  if (!token) {
+    return res.render("error", { msg: "No token provided!" });
+  }
+  jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+    if (err) {
+      return res.render("error", { msg: "Unauthorized!" });
+    }
+    req.user = decoded;
+    if (req.user && req.user.userData.role === "admin") {
+      next();
+    } else {
+      return res.render("error", { msg: "Require Admin Role!" });
+    }
+  });
+};
+
 module.exports = {
   securePassword,
   verifyToken,
   authenticateToken,
+  isAdmin,
 };

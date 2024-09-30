@@ -5,19 +5,34 @@
     <title>home-rental/Registration-form</title>
     <link rel="stylesheet" href="/css/formcss.css" />
     <link rel="stylesheet" href="/css/navbar.css" />
+    <script src="/js/index.js"></script>
   </head>
   <body>
     <%- include('partials/header.ejs') %>
     <div class="container">
       <form
-        action="/dashboard/posts/add"
+        action="<%= data ? '/dashboard/posts/update' : '/dashboard/posts/add' %>"
         method="post"
         enctype="multipart/form-data">
-        <h2>Add Posts</h2>
+        <% if (data) { %>
+        <input type="hidden" name="id" value="<%= data._id %>" />
+        <h2>Update Post</h2>
+        <img
+          src="<%= data.ImageURL %>"
+          alt="Current Image"
+          style="max-width: 200px; max-height: 200px" />
+        <% } else { %>
+        <h2>Add Post</h2>
+        <% } %>
         <div class="content">
           <div class="input-box">
             <label for="name">Name</label>
-            <input type="text" placeholder="Enter Name" name="name" required />
+            <input
+              type="text"
+              placeholder="Enter Name"
+              name="name"
+              value="<%= data ? data.Name : '' %>"
+              required />
           </div>
           <div class="input-box">
             <label for="text">Category</label>
@@ -25,6 +40,7 @@
               type="text"
               placeholder="Enter Category"
               name="category"
+              value="<%= data ? data.Category : '' %>"
               required />
           </div>
           <div class="input-box">
@@ -33,6 +49,7 @@
               type="text"
               placeholder="Enter Address"
               name="address"
+              value="<%= data ? data.Address : '' %>"
               required />
           </div>
           <div class="input-box">
@@ -41,11 +58,12 @@
               type="text"
               placeholder="Enter Description"
               name="description"
+              value="<%= data ? data.Description : '' %>"
               required />
           </div>
           <div class="input-box img">
             <label for="image">Image</label>
-            <input type="file" name="image" required />
+            <input type="file" name="image" <%= data ? '' : 'required' %> />
           </div>
           <div class="input-box">
             <label for="image">Price</label>
@@ -53,13 +71,16 @@
               type="number"
               placeholder="Enter Price"
               name="price"
+              value="<%= data ? data.Price : '' %>"
               required />
           </div>
         </div>
         <div class="button-container">
-          <button type="submit">Register Here</button>
+          <button type="submit">
+            <%= data ? 'Update Post' : 'Add Post' %>
+          </button>
         </div>
-        <% if(msg) { %>
+        <% if (msg) { %>
         <h3><%= msg %></h3>
         <% } %>
       </form>

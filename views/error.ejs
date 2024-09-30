@@ -13,9 +13,8 @@
     <div class="container">
       <i class="fa-regular fa-face-frown"></i>
       <h1>404</h1>
-      <% if(msg1){ %>
-      <h2>User not logged in.</h2>
-      <p>Please Login to continue</p>
+      <% if(msg){ %>
+      <p><%= msg %></p>
       <% } %>
       <a href="/">Login</a>
     </div>
