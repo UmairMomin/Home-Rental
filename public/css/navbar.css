@@ -6,7 +6,8 @@ header {
     transform: translateX(-50%);
     z-index: 20;
     height: 6rem;
-    background-color: #E2DAD6;
+    background-color: #ffffff;
+    
 }
 
 .nav_content {
